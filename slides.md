@@ -28,12 +28,38 @@ To provide an overview to persisting data for databases in Docker
 ## Options for persisting data
 <!-- .slide: style="text-align: left;"> -->
 - Bind mounts<br>
-- Data volume containers<br>
-- Named volumes
+- Named volumes<br>
+- Data volume containers
 
 ---
 
-# TBD
+## Bind Mounts
+<!-- .slide: style="text-align: left;"> -->
+TBD
+
+---
+
+# Demo
+
+---
+
+## Named Volumes
+<!-- .slide: style="text-align: left;"> -->
+TBD
+
+---
+
+# Demo
+
+---
+
+## Data Volume Containers
+<!-- .slide: style="text-align: left;"> -->
+TBD
+
+---
+
+# Demo
 
 ---
 
