@@ -64,6 +64,7 @@ TBD
 ---
 
 ## Resources
+<!-- .slide: style="text-align: left;"> -->
 <font size="6">
 <a href="https://github.com/dbafromthecold/DockerAndDatabases">https://github.com/dbafromthecold/DockerAndDatabases</a><br>
 </font>
