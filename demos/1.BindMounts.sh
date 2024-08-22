@@ -61,6 +61,7 @@ psql -h localhost -p 15789 -U postgres -d postgres -V
 psql -h localhost -p 15789 -U postgres -d postgres -c "CREATE DATABASE testdatabase"
 
 
+
 # confirm database has been created
 psql -h localhost -p 15789 -U postgres -d postgres -l
 
