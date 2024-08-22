@@ -12,13 +12,23 @@
 
 
 
+# remove existing directory
+sudo rm -rfv /home/apruski/postgres-local
+
+
+
+# create new directory
+mkdir /home/apruski/postgres-local
+
+
+
 # confirm no containers running
 docker container ls -a
 
 
 
 # confirm container images
-docker image ls
+docker image ls | grep postgres
 
 
 
@@ -27,8 +37,13 @@ docker run -d \
 --name postgres1 \
 --publish 15789:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \
---volume ~/postgres-data:/var/lib/postgresql/data \
+--volume ~/postgres-local:/var/lib/postgresql/data \
 postgres
+
+
+
+# confirm container running
+docker container ls -a
 
 
 
@@ -52,7 +67,7 @@ psql -h localhost -p 15789 -U postgres -d postgres -l
 
 
 # view the contents of the bind mount
-sudo ls ~/postgres-data
+sudo ls ~/postgres-local
 
 
 
@@ -71,7 +86,7 @@ docker run -d \
 --name postgres2 \
 --publish 15790:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \
---volume ~/postgres-data:/var/lib/postgresql/data \
+--volume ~/postgres-local:/var/lib/postgresql/data \
 postgres
 
 
@@ -83,3 +98,4 @@ psql -h localhost -p 15790 -U postgres -d postgres -l
 
 # clean up
 docker container rm postgres2 -f
+sudo rm -rfv /home/apruski/postgres-local
