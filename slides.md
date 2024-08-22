@@ -35,7 +35,10 @@ To provide an overview to persisting data for databases in Docker
 
 ## Bind Mounts
 <!-- .slide: style="text-align: left;"> -->
-TBD
+- Mounting directories from the host
+- Use absolute path
+- Can be created on demand
+- Adding dependency to container
 
 ---
 
@@ -45,7 +48,10 @@ TBD
 
 ## Named Volumes
 <!-- .slide: style="text-align: left;"> -->
-TBD
+- Volume(s) created/managed by Docker
+- No dependency on the host
+- Lifecycle outside any container referencing it
+- Higher performance than bind mounts
 
 ---
 
@@ -55,7 +61,11 @@ TBD
 
 ## Data Volume Containers
 <!-- .slide: style="text-align: left;"> -->
-TBD
+- Container created with volumes
+- Not in the running state
+- Volumes created in background
+- Other containers reference data volume container
+- Useful for mapping a large amount of volumes
 
 ---
 
