@@ -27,8 +27,10 @@ To provide an overview to persisting data for databases in Docker
 
 ## Why databases in Docker?
 <!-- .slide: style="text-align: left;"> -->
-TBD
-
+- Ease of deployment
+- Known configuration
+- Testing new versions (rollback)
+- Separate compute from data
 
 ---
 
@@ -82,7 +84,10 @@ TBD
 
 ## Docker Compose
 <!-- .slide: style="text-align: left;"> -->
-TBD
+-- Not only for multi-container deployments
+-- Simpler to spin up complex applications
+-- Bind mounts or volumes supported
+-- Version control
 
 ---
 
