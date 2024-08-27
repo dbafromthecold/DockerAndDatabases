@@ -25,6 +25,13 @@ To provide an overview to persisting data for databases in Docker
 
 ---
 
+## Why databases in Docker?
+<!-- .slide: style="text-align: left;"> -->
+TBD
+
+
+---
+
 ## Options for persisting data
 <!-- .slide: style="text-align: left;"> -->
 - Bind mounts<br>
@@ -66,6 +73,16 @@ To provide an overview to persisting data for databases in Docker
 - Volumes created in background
 - Other containers reference data volume container
 - Useful for mapping a large amount of volumes
+
+---
+
+# Demo
+
+---
+
+## Docker Compose
+<!-- .slide: style="text-align: left;"> -->
+TBD
 
 ---
 
