@@ -92,5 +92,26 @@ docker volume ls
 
 
 
+# spin up again
+docker-compose up -d
+
+
+
+# check the networks again
+docker network ls
+
+
+
+# check the containers
+docker container ls -a
+
+
+
+# confirm database
+psql -h localhost -p 15795 -U postgres -d postgres -l
+
+
+
 # clean up
+docker-compose down
 docker volume rm demos_postgres_data
