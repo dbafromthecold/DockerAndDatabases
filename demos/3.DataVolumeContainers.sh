@@ -24,10 +24,9 @@ docker volume ls
 
 # create the data volume container
 docker container create \
---volume /var/lib/postgresql/data \
+--mount type=volume,dst=/var/lib/postgresql/data,volume-driver=local \
 --name datastore \
 ubuntu
-
 
 
 # confirm running containers

@@ -87,7 +87,7 @@ docker container run -d \
 --name postgres2 \
 --publish 15790:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \
---volume /home/apruski/postgres-local:/var/lib/postgresql/data \
+--mount type=bind,source=/home/apruski/postgres-local,target=/var/lib/postgresql/data \
 postgres
 
 

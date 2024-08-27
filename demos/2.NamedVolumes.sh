@@ -82,7 +82,7 @@ docker container run -d \
 --name postgres4 \
 --publish 15792:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \
---volume postgres-data:/var/lib/postgresql/data \
+--mount type=volume,src=postgres-data,dst=/var/lib/postgresql/data,volume-driver=local \
 postgres
 
 
