@@ -46,7 +46,7 @@ docker volume ls
 
 
 # run a container referencing the data volume container
-docker run -d \
+docker container run -d \
 --name postgres5 \
 --publish 15793:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \

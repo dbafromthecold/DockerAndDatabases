@@ -28,7 +28,7 @@ docker volume ls
 
 
 # run a container with a named volume
-docker run -d \
+docker container run -d \
 --name postgres3 \
 --publish 15791:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \
@@ -78,7 +78,7 @@ docker volume ls
 
 
 # run another container with the same named volume
-docker run -d \
+docker container run -d \
 --name postgres4 \
 --publish 15792:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \

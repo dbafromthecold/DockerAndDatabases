@@ -33,11 +33,11 @@ docker image ls | grep postgres
 
 
 # run a container with a bind mount
-docker run -d \
+docker container run -d \
 --name postgres1 \
 --publish 15789:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \
---volume ~/postgres-local:/var/lib/postgresql/data \
+--volume /home/apruski/postgres-local:/var/lib/postgresql/data \
 postgres
 
 
@@ -68,7 +68,7 @@ psql -h localhost -p 15789 -U postgres -d postgres -l
 
 
 # view the contents of the bind mount
-sudo ls ~/postgres-local
+sudo ls /home/apruski/postgres-local/
 
 
 
@@ -83,11 +83,11 @@ docker container ls -a
 
 
 # run another container with the same bind mount    
-docker run -d \
+docker container run -d \
 --name postgres2 \
 --publish 15790:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \
---volume ~/postgres-local:/var/lib/postgresql/data \
+--volume /home/apruski/postgres-local:/var/lib/postgresql/data \
 postgres
 
 
