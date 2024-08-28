@@ -84,10 +84,10 @@ To provide an overview to persisting data for databases in Docker
 
 ## Docker Compose
 <!-- .slide: style="text-align: left;"> -->
--- Not only for multi-container deployments
--- Simpler to spin up complex applications
--- Bind mounts or volumes supported
--- Version control
+- Not only for multi-container deployments
+- Simpler to spin up complex applications
+- Bind mounts or volumes supported
+- Version control
 
 ---
 
