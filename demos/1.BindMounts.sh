@@ -68,7 +68,7 @@ psql -h localhost -p 15789 -U postgres -d postgres -l
 
 
 # view the contents of the bind mount
-sudo ls /home/apruski/postgres-local/
+sudo ls /home/apruski/postgres-local/base/16388/
 
 
 
