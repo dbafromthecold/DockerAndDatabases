@@ -42,6 +42,16 @@ To provide an overview to persisting data for databases in Docker
 
 ---
 
+## Volume Architecture
+<!-- .slide: style="text-align: left;"> -->
+
+<p align="center">
+  <img src="images/docker_volume_image.png" />
+</p>
+
+
+---
+
 ## Bind Mounts
 <!-- .slide: style="text-align: left;"> -->
 - Mounting directories from the host
