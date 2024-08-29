@@ -33,12 +33,18 @@ docker container run -d \
 --publish 15791:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \
 --volume postgres-data:/var/lib/postgresql/data \
-postgres
+postgres:latest
 
 
 
 # confirm container is running
 docker container ls -a
+
+
+
+# inspect the container
+# https://docs.docker.com/engine/storage/bind-mounts/#configure-bind-propagation
+docker container inspect postgres3  | jq '.[0].Mounts'
 
 
 
@@ -48,7 +54,7 @@ export PGPASSWORD='Testing1122'
 
 
 # confirm connection to postgres
-psql -h localhost -p 15791 -U postgres -d postgres -V
+psql -h localhost -p 15791 -U postgres -d postgres -c "SELECT version();"
 
 
 

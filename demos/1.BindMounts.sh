@@ -38,12 +38,19 @@ docker container run -d \
 --publish 15789:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \
 --volume /home/apruski/postgres-local:/var/lib/postgresql/data \
-postgres
+postgres:latest
 
 
 
 # confirm container running
 docker container ls -a
+
+
+
+# inspect the container
+# https://docs.docker.com/engine/storage/bind-mounts/#configure-bind-propagation
+# rprivate - no mount points anywhere within the original or replica mount points propagate in either direction
+docker container inspect postgres1 | jq '.[0].Mounts'
 
 
 
@@ -53,7 +60,7 @@ export PGPASSWORD='Testing1122'
 
 
 # confirm version of postgres in container
-psql -h localhost -p 15789 -U postgres -d postgres -V
+psql -h localhost -p 15789 -U postgres -d postgres -c "SELECT version();"
 
 
 
@@ -68,7 +75,7 @@ psql -h localhost -p 15789 -U postgres -d postgres -l
 
 
 # view the contents of the bind mount
-sudo ls /home/apruski/postgres-local/base/16388/
+sudo ls /home/apruski/postgres-local/
 
 
 
@@ -94,6 +101,21 @@ postgres
 
 # confirm custom database is still there
 psql -h localhost -p 15790 -U postgres -d postgres -l
+
+
+
+# remove directory
+sudo rm -rfv /home/apruski/postgres-local
+
+
+
+# confirm container running
+docker container ls -a
+
+
+
+# view container logs
+docker container logs postgres2
 
 
 

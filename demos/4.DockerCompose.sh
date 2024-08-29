@@ -58,7 +58,7 @@ export PGPASSWORD='Testing1122'
 
 
 # connect to the container
-psql -h localhost -p 15795 -U postgres -d postgres -V
+psql -h localhost -p 15795 -U postgres -d postgres -c "SELECT version();"
 
 
 

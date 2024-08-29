@@ -60,7 +60,7 @@ export PGPASSWORD='Testing1122'
 
 
 # confirm connection to postgres
-psql -h localhost -p 15793 -U postgres -d postgres -V
+psql -h localhost -p 15793 -U postgres -d postgres -c "SELECT version();"
 
 
 
@@ -111,4 +111,4 @@ psql -h localhost -p 15794 -U postgres -d postgres -l
 
 # clean up
 docker container rm postgres6 datastore -f
-docker volume prune -f
+docker volume rm $(docker volume ls -q)

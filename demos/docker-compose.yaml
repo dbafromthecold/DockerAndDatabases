@@ -2,7 +2,7 @@
 services:
   postgres:
     image: postgres:latest
-    container_name: postgres
+    container_name: postgres7
     environment:
       POSTGRES_PASSWORD: Testing1122
     ports:
