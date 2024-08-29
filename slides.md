@@ -61,20 +61,12 @@ To provide an overview to persisting data for databases in Docker
 
 ---
 
-# Demo
-
----
-
 ## Named Volumes
 <!-- .slide: style="text-align: left;"> -->
 - Volume(s) created/managed by Docker
 - No dependency on the host
 - Lifecycle outside any container referencing it
 - Higher performance than bind mounts
-
----
-
-# Demo
 
 ---
 
@@ -85,19 +77,6 @@ To provide an overview to persisting data for databases in Docker
 - Volumes created in background
 - Other containers reference data volume container
 - Useful for mapping a large amount of volumes
-
----
-
-# Demo
-
----
-
-## Docker Compose
-<!-- .slide: style="text-align: left;"> -->
-- Not only for multi-container deployments
-- Simpler to spin up complex applications
-- Bind mounts or volumes supported
-- Version control
 
 ---
 
