@@ -12,7 +12,7 @@
 
 
 
-# remove existing directory
+# remove existing directory (if exists)
 sudo rm -rfv /home/apruski/postgres-local
 
 

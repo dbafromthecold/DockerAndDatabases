@@ -5,6 +5,8 @@
 # @dbafromthecold
 # dbafromthecold@gmail.com
 # https://github.com/dbafromthecold/DockerAndDatabases
+# https://www.postgresql.org/docs/current/warm-standby.html
+# https://github.com/MichaelCade/90DaysOfDevOps/blob/main/2023/day66.md 
 # Testing HA for PostgreSQL in containers
 #
 ############################################################################
@@ -45,7 +47,7 @@ psql -h localhost -p 5432 -U postgres -d postgres -l
 
 
 
-# update pg_hba.conf to allow connections to the secondary instance
+# update pg_hba.conf to allow connections to the secondary instance (using IP range for the docker containers on this host)
 docker exec -u postgres postgres8 bash -c 'echo "host replication replicator 172.18.0.1/24 trust" >> /var/lib/postgresql/data/pg_hba.conf'
 
 
@@ -61,7 +63,7 @@ psql -h localhost -p 5432 -U postgres -d postgres -c "SELECT * FROM pg_create_ph
 
 
 # confirm replication slot has been created
-psql -h localhost -p 5432 -U postgres -d postgres -c "SELECT * FROM pg_replication_slots;"
+psql -h localhost -p 5432 -U postgres -d postgres -c "SELECT slot_name, slot_type, active FROM pg_replication_slots;"
 
 
 

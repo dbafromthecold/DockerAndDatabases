@@ -1,0 +1,43 @@
+
+services:
+  postgres1:
+    image: postgres:latest
+    container_name: postgres1
+    user: postgres
+    environment:
+      POSTGRES_PASSWORD: Testing1122
+      POSTGRES_DB: testdatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - postgres_base:/postgres/archive/base
+      - ./01-update_hba_conf.sh:/docker-entrypoint-initdb.d/01-update_hba_conf.sh
+      - ./02-init_script.sql:/docker-entrypoint-initdb.d/02-init_script.sql
+      - ./03-base_backup.sh:/docker-entrypoint-initdb.d/03-base_backup.sh
+    healthcheck:
+      test: ["CMD", "test", "-f", "/postgres/archive/base/ready.flag"]
+      interval: 10s
+      retries: 12
+
+  postgres2:
+    image: postgres:latest
+    container_name: postgres2
+    user: postgres
+    command: ["sh","-c","/var/lib/postgresql/data/01-update_postgresql_auto_conf.sh && postgres"]
+    environment:
+      POSTGRES_PASSWORD: Testing1122
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_base:/var/lib/postgresql/data
+      - ./01-update_postgresql_auto_conf.sh:/var/lib/postgresql/data/01-update_postgresql_auto_conf.sh
+    restart: on-failure
+    depends_on:
+      postgres1:
+        condition: service_healthy
+
+
+volumes:
+  postgres_data:
+  postgres_base:
