@@ -1,12 +1,12 @@
 #!/bin/bash
 
 
-# Set the password for the replicator user
+# Set the password to connect to the instance
 export PGPASSWORD=Testing1122
 
 
 # take a base backup
-pg_basebackup -D /postgres/archive/base -S replication_slot_slave1 -X stream -U replicator -Fp -R
+pg_basebackup -D /postgres/archive/base --checkpoint=fast -S replication_slot_slave1 -X stream -U replicator -Fp -R
 
 
 # Create a flag file to indicate that the base backup is complete

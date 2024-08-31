@@ -18,7 +18,7 @@ services:
     healthcheck:
       test: ["CMD", "test", "-f", "/postgres/archive/base/ready.flag"]
       interval: 10s
-      retries: 12
+      retries: 5
 
   postgres2:
     image: postgres:latest
@@ -32,11 +32,9 @@ services:
     volumes:
       - postgres_base:/var/lib/postgresql/data
       - ./01-update_postgresql_auto_conf.sh:/var/lib/postgresql/data/01-update_postgresql_auto_conf.sh
-    restart: on-failure
     depends_on:
       postgres1:
         condition: service_healthy
-
 
 volumes:
   postgres_data:
