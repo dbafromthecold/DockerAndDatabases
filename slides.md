@@ -28,7 +28,6 @@ To provide an overview to persisting data for databases in Docker
 ## Why databases in Docker?
 
 <img src="images/docker_icon.png" style="float: right"/>
-
 <!-- .slide: style="text-align: left;"> -->
 - Ease of deployment
 - Known configuration
