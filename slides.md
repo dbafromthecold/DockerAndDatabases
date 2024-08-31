@@ -30,7 +30,7 @@ To provide an overview to persisting data for databases in Docker
 <img src="images/docker_icon.png" style="float: right"/>
 
 <!-- .slide: style="text-align: left;"> -->
-- Ease of deployment
+- Ease of deployment1
 - Known configuration
 - Testing new versions (rollback)
 - Separate compute from data
