@@ -12,7 +12,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - postgres_base:/postgres/archive/base
-      - ./01-test.sh:/docker-entrypoint-initdb.d/01-test.sh
       - ./01-update_hba_conf.sh:/docker-entrypoint-initdb.d/01-update_hba_conf.sh
       - ./02-init_script.sql:/docker-entrypoint-initdb.d/02-init_script.sql
       - ./03-base_backup.sh:/docker-entrypoint-initdb.d/03-base_backup.sh
