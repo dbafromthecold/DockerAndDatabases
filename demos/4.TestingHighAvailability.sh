@@ -103,7 +103,7 @@ docker container restart postgres8 postgres9
 
 
 
-# connect to the demodb database in the container, create a table, and then insert some data
+# connect to the database in the container, create a table, and then insert some data
 psql -h localhost -p 5432 -U postgres -d testdatabase5 -c "CREATE TABLE test_table (
   id smallint,
   first_name VARCHAR(50),

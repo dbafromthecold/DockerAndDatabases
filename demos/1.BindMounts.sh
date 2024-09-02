@@ -95,7 +95,7 @@ docker container run -d \
 --publish 15790:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \
 --mount type=bind,source=/home/apruski/postgres-local,target=/var/lib/postgresql/data \
-postgres
+postgres:latest
 
 
 

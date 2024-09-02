@@ -26,7 +26,7 @@ docker volume ls
 docker container create \
 --mount type=volume,dst=/var/lib/postgresql/data,volume-driver=local \
 --name datastore \
-ubuntu
+ubuntu:latest
 
 
 # confirm running containers
@@ -50,7 +50,7 @@ docker container run -d \
 --publish 15793:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \
 --volumes-from datastore \
-postgres
+postgres:latest
 
 
 
@@ -100,7 +100,7 @@ docker run -d \
 --publish 15794:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \
 --volumes-from datastore \
-postgres
+postgres:latest
 
 
 
