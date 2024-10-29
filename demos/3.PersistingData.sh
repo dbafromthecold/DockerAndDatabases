@@ -5,7 +5,7 @@
 # @dbafromthecold
 # dbafromthecold@gmail.com
 # https://github.com/dbafromthecold/DockerAndDatabases
-# Named Volumes
+# Persisting data with Named Volumes
 #
 ############################################################################
 ############################################################################
