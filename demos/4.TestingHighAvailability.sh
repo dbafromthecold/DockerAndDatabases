@@ -15,7 +15,7 @@
 
 
 # create custom bridge network
-docker network create postgres
+docker network create --subnet=172.21.0.0/16  postgres
 
 
 
@@ -26,8 +26,8 @@ docker run -d \
 --volume postgres-data:/var/lib/postgresql/data \
 --volume postgres-base:/postgres/archive/base \
 --env POSTGRES_PASSWORD=Testing1122 \
---env POSTGRES_DB=testdatabase5 \
---name postgres8 \
+--env POSTGRES_DB=testdatabase \
+--name postgres1 \
 postgres:17
 
 
@@ -47,8 +47,13 @@ psql -h localhost -p 5432 -U postgres -d postgres -l
 
 
 
+# inspect network to confirm IP address of container
+docker network inspect postgres
+
+
+
 # update pg_hba.conf to allow connections to the secondary instance (using IP range for the docker containers on this host)
-docker exec -u postgres postgres8 bash -c 'echo "host replication replicator 172.18.0.1/24 trust" >> /var/lib/postgresql/data/pg_hba.conf'
+docker exec -u postgres postgres1 bash -c 'echo "host replication replicator 172.21.0.3/16 trust" >> /var/lib/postgresql/data/pg_hba.conf'
 
 
 
@@ -68,7 +73,7 @@ psql -h localhost -p 5432 -U postgres -d postgres -c "SELECT slot_name, slot_typ
 
 
 # take a base backup
-docker exec postgres8 bash -c 'pg_basebackup -D /postgres/archive/base -S replication_slot_slave1 -X stream -U replicator -Fp -R'
+docker exec postgres1 bash -c 'pg_basebackup -D /postgres/archive/base -S replication_slot_slave1 -X stream -U replicator -Fp -R'
 
 
 
@@ -78,7 +83,7 @@ docker run -d \
 --network=postgres \
 --volume postgres-base:/var/lib/postgresql/data \
 --env POSTGRES_PASSWORD=Testing1122 \
---name postgres9 \
+--name postgres2 \
 postgres:17
 
 
@@ -94,17 +99,17 @@ psql -h localhost -p 5433 -U postgres -d postgres -l
 
 
 # update the postgresql.auto.conf with information about the primary container
-docker exec -u postgres postgres9 bash -c "echo \"primary_conninfo = 'host=postgres8 port=5432 user=replicator password=Testing1122'\" >> \$PGDATA/postgresql.auto.conf"
+docker exec -u postgres postgres2 bash -c "echo \"primary_conninfo = 'host=postgres1 port=5432 user=replicator password=Testing1122'\" >> \$PGDATA/postgresql.auto.conf"
 
 
 
 # restart both containers
-docker container restart postgres8 postgres9
+docker container restart postgres1 postgres2
 
 
 
 # connect to the database in the container, create a table, and then insert some data
-psql -h localhost -p 5432 -U postgres -d testdatabase5 -c "CREATE TABLE test_table (
+psql -h localhost -p 5432 -U postgres -d testdatabase -c "CREATE TABLE test_table (
   id smallint,
   first_name VARCHAR(50),
   last_name VARCHAR(50),
@@ -121,11 +126,11 @@ VALUES
 
 
 # confirm data has been replicated over to the secondary instance
-psql -h localhost -p 5433 -U postgres -d testdatabase5 -c "SELECT * FROM test_table"
+psql -h localhost -p 5433 -U postgres -d testdatabase -c "SELECT * FROM test_table"
 
 
 
 # clean up
-docker container rm postgres8 postgres9 -f
+docker container rm postgres1 postgres2 -f
 docker volume rm postgres-data postgres-base
 docker network rm postgres

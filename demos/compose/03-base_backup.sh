@@ -13,4 +13,4 @@ touch /postgres/archive/base/ready.flag
 chmod 700 -R /postgres/archive/base
 
 # Restart PostgreSQL to apply changes
-/usr/lib/postgresql/16/bin/pg_ctl -D /var/lib/postgresql/data restart
+/usr/lib/postgresql/17/bin/pg_ctl -D /var/lib/postgresql/data restart

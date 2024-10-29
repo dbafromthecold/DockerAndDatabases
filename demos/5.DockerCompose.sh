@@ -13,7 +13,8 @@
 
 
 # navigate to code
-cd /mnt/c/git/DockerAndDatabases/demos/compose
+#cd /mnt/c/git/DockerAndDatabases/demos/compose
+cd /mnt/winshare/DockerAndDatabases/demos/compose
 
 
 
@@ -33,7 +34,7 @@ docker volume ls
 
 
 # spin up a container with docker compose
-docker-compose up -d
+docker compose up -d
 
 
 
@@ -101,4 +102,4 @@ psql -h localhost -p 5433 -U postgres -d testdatabase -c "SELECT * FROM test_tab
 
 
 # clean up
-docker-compose down -v
+docker compose down -v
