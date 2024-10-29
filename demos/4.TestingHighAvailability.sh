@@ -28,7 +28,7 @@ docker run -d \
 --env POSTGRES_PASSWORD=Testing1122 \
 --env POSTGRES_DB=testdatabase5 \
 --name postgres8 \
-postgres:latest
+postgres:17
 
 
 
@@ -79,7 +79,7 @@ docker run -d \
 --volume postgres-base:/var/lib/postgresql/data \
 --env POSTGRES_PASSWORD=Testing1122 \
 --name postgres9 \
-postgres:latest
+postgres:17
 
 
 

@@ -43,7 +43,6 @@ docker container ls -a
 
 
 # inspect the container
-# https://docs.docker.com/engine/storage/bind-mounts/#configure-bind-propagation
 docker container inspect postgres1  | jq '.[0].Mounts'
 
 

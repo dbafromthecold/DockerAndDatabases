@@ -1,10 +1,10 @@
 ############################################################################
 ############################################################################
 #
-# Docker Deep Dive - Andrew Pruski
+# Docker & Databases - Andrew Pruski
 # @dbafromthecold
 # dbafromthecold@gmail.com
-# https://github.com/dbafromthecold/DockerDeepDive
+# https://github.com/dbafromthecold/DockerAndDatabases
 # Container Isolation
 #
 ############################################################################
