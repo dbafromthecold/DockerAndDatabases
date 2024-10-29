@@ -55,7 +55,7 @@ To provide a deeper knowledge of the Docker platform - UPDATE!
 <!-- .slide: style="text-align: left;"> -->
 
 <p align="center">
-  <img src="images/there-is-no-spoon.png" />
+  <img src="images/there-is-no-spoon.gif" />
 </p>
 
 ---
