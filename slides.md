@@ -51,6 +51,15 @@ To provide a deeper knowledge of the Docker platform - UPDATE!
 
 ---
 
+## There is no spoon
+<!-- .slide: style="text-align: left;"> -->
+
+<p align="center">
+  <img src="images/there-is-no-spoon.png" />
+</p>
+
+---
+
 ## Container Isolation
 <!-- .slide: style="text-align: left;"> -->
 "Containers isolate software from its environment and ensure that it works uniformly despite differences for instance between development and staging"<br>
