@@ -14,7 +14,8 @@
 
 # navigate to code
 #cd /mnt/c/git/DockerAndDatabases/demos/compose
-cd /mnt/winshare/DockerAndDatabases/demos/compose
+#cd /mnt/winshare/DockerAndDatabases/demos/compose
+cd ~/DockerAndDatabases/demos/compose
 
 
 

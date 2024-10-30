@@ -25,13 +25,11 @@ docker network inspect bridge
 # let's run two sql containers on the default bridge network
 docker container run -d \
 --name postgres1 \
---memory 2048M \
 --env POSTGRES_PASSWORD=Testing1122 \
 ghcr.io/dbafromthecold/custom-postgres:latest
 
 docker container run -d \
 --name postgres2 \
---memory 2048M \
 --env POSTGRES_PASSWORD=Testing1122 \
 ghcr.io/dbafromthecold/custom-postgres:latest
 
@@ -81,14 +79,12 @@ docker rm $(docker ps -aq) -f
 # and spin them up again, this time adding entries for each in the hosts file
 docker container run -d \
 --name postgres1 \
---memory 2048M \
 --env POSTGRES_PASSWORD=Testing1122 \
 --add-host=postgres2:172.17.0.3 \
 ghcr.io/dbafromthecold/custom-postgres:latest
 
 docker container run -d \
 --name postgres2 \
---memory 2048M \
 --env POSTGRES_PASSWORD=Testing1122 \
 --add-host=postgres1:172.17.0.2 \
 ghcr.io/dbafromthecold/custom-postgres:latest
@@ -104,14 +100,12 @@ docker exec postgres1 ping postgres2 -c 4
 docker container run -d \
 --name postgres3 \
 --publish 15789:5432 \
---memory 2048M \
 --env POSTGRES_PASSWORD=Testing1122 \
 ghcr.io/dbafromthecold/custom-postgres:latest
 
 docker container run -d \
 --name postgres4 \
 --publish 15799:5432 \
---memory 2048M \
 --env POSTGRES_PASSWORD=Testing1122 \
 ghcr.io/dbafromthecold/custom-postgres:latest
 
@@ -148,7 +142,6 @@ docker container run -d \
 --network=postgres \
 --name postgres5 \
 --publish 15800:5432 \
---memory 2048M \
 --env POSTGRES_PASSWORD=Testing1122 \
 ghcr.io/dbafromthecold/custom-postgres:latest
 
@@ -156,7 +149,6 @@ docker container run -d \
 --network=postgres \
 --name postgres6 \
 --publish 15810:5432 \
---memory 2048M \
 --env POSTGRES_PASSWORD=Testing1122 \
 ghcr.io/dbafromthecold/custom-postgres:latest
 
@@ -173,5 +165,5 @@ docker exec postgres5 cat /etc/resolv.conf
 
 
 # clean up
-docker rm $(docker ps -aq) -f
+docker rm $(docker ps -aq) -vf
 docker network rm postgres

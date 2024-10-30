@@ -63,7 +63,7 @@ cat $CPUCGROUP/cpu.cfs_quota_us
 
 
 
-# set CPU limit on the fly - thanks Anthony!
+# set CPU limit on the fly
 docker update postgres1 --cpus 2
 
 
@@ -154,4 +154,4 @@ sudo ls -al $FILES/base
 
 
 # clean up
-docker rm $(docker ps -aq) -f
+docker rm $(docker ps -aq) -vf

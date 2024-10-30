@@ -88,7 +88,7 @@ docker container run -d \
 --publish 15792:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \
 --mount type=volume,src=postgres-data,dst=/var/lib/postgresql/data,volume-driver=local \
-postgres:latest
+postgres:17
 
 
 
