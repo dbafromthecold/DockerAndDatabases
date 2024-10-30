@@ -1,16 +1,13 @@
-# Docker & Databases
+# Docker & Databases / Diving into Docker
 
-Code for my Docker & Databases session
+Code for my Docker & Databases / Diving into Docker session
 
 This session covers: -
-- Bind Mounts
-- Named Volumes
-- Data Volume Containers
+- Container Isolation
+- Container Networking
+- Persisting Data
+- Testing High Availability for PostgreSQL
+- Docker Compose
 
-
-# Github repo for this session
-https://github.com/dbafromthecold/DockerAndDatabases
-
-
-# Slides for this session
+## Slides for this session
 https://dbafromthecold.github.io/DockerAndDatabases
