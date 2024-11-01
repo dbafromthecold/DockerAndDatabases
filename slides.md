@@ -187,6 +187,8 @@ Then, with a single command, you create and start all the services from your con
 <a href="https://github.com/dbafromthecold/DockerAndDatabases">https://github.com/dbafromthecold/DockerAndDatabases</a><br>
 </font>
 
+## Feedback
+
 <p align="center">
-  <img src="images/DockerDatabasesQr.png" />
+<img src="images/openfest_feedback_qr.png" />
 </p>
