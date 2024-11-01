@@ -194,6 +194,7 @@ Then, with a single command, you create and start all the services from your con
 ---
 
 ## Feedback
+<!-- .slide: style="text-align: left;"> -->
 
 <p align="center">
 <img src="images/openfest_feedback_qr.png" />
