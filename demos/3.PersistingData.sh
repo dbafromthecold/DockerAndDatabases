@@ -44,6 +44,7 @@ docker container ls -a
 
 # inspect the container
 docker container inspect postgres1  | jq '.[0].Mounts'
+# mode z - SELinux labels on the volume to allow shared access across containers
 
 
 

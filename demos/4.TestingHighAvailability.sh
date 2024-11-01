@@ -20,7 +20,7 @@ docker network create --subnet=172.21.0.0/16  postgres
 
 
 # run a container with named volumes
-docker run -d \
+docker container run -d \
 --publish 5432:5432 \
 --network=postgres \
 --volume postgres-data:/var/lib/postgresql/data \
@@ -78,7 +78,7 @@ docker exec postgres1 bash -c 'pg_basebackup -D /postgres/archive/base -S replic
 
 
 # run a second container, mapping the named volume to the postgres data directory
-docker run -d \
+docker container run -d \
 --publish 5433:5432 \
 --network=postgres \
 --volume postgres-base:/var/lib/postgresql/data \
@@ -105,6 +105,12 @@ docker exec -u postgres postgres2 bash -c "echo \"primary_conninfo = 'host=postg
 
 # restart both containers
 docker container restart postgres1 postgres2
+
+
+
+# view container logs
+docker container logs postgres1
+docker container logs postgres2
 
 
 

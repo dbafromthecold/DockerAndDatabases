@@ -98,6 +98,16 @@ ps aux | grep postgres
 
 
 
+# view user id of postgres process on host
+id systemd-coredump
+
+
+
+# view user id of postgres process within container
+docker exec postgres1 id postgres
+
+
+
 # grab the pid
 pid=$(sudo lsns | grep postgres | awk '!visited[$4]++ {print $4}') && echo $pid
 

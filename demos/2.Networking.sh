@@ -22,6 +22,11 @@ docker network inspect bridge
 
 
 
+# view network interfaces on host
+ip a
+
+
+
 # let's run two sql containers on the default bridge network
 docker container run -d \
 --name postgres1 \
@@ -151,6 +156,16 @@ docker container run -d \
 --publish 15810:5432 \
 --env POSTGRES_PASSWORD=Testing1122 \
 ghcr.io/dbafromthecold/custom-postgres:latest
+
+
+
+# inspect network 
+docker network inspect postgres
+
+
+
+# view network interfaces on host
+ip a
 
 
 
