@@ -51,7 +51,7 @@ To provide a deeper knowledge of the Docker platform - UPDATE!
 
 ---
 
-## There is no spoon
+## There are no containers!
 <!-- .slide: style="text-align: left;"> -->
 
 <p align="center">
@@ -147,6 +147,33 @@ Used to control:-<br>
 - Data volume containers<br>
 - Named volumes
 
+
+---
+
+# Demo
+
+---
+
+# Docker Compose
+
+---
+
+## What is Compose?
+<!-- .slide: style="text-align: left;"> -->
+"Compose is a tool for defining and running multi-container Docker applications.
+With Compose, you use a YAML file to configure your application`s services.
+Then, with a single command, you create and start all the services from your configuration."<br>
+<font size="6"><a href="https://docs.docker.com/compose/">docs.docker.com/compose</a></font>
+
+---
+
+## Testing High Availability
+<!-- .slide: style="text-align: left;"> -->
+
+- Project for 90 Days of DevOps
+- Two PostgreSQL containers on custom network
+- Replicating from primary to secondary
+- Needed to be easily repeatable
 
 ---
 
