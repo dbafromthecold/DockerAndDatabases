@@ -30,7 +30,8 @@ To provide a deeper knowledge of the Docker platform
 <img src="images/docker_icon.png" style="float: right"/>
 
 <!-- .slide: style="text-align: left;"> -->
-"Docker provides the ability to package and run an application in a loosely isolated environment called a container. The isolation and security lets you run many containers simultaneously on a given host. Containers are lightweight and contain everything needed to run the application, so you don't need to rely on what's installed on the host"
+"Docker provides the ability to package applications in an isolated environment called a container. Containers are lightweight and contain everything needed to run the application, so you don't need to rely on what's installed on the host"
+</br>
 <font size="6"><a href="https://docs.docker.com/get-started/docker-overview/">docs.docker.com/get-started/docker-overview/</a></font>
 
 ---
