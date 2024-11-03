@@ -25,6 +25,15 @@ To provide a deeper knowledge of the Docker platform
 
 ---
 
+## Agenda
+<!-- .slide: style="text-align: left;"> -->
+- Isolation<br>
+- Networking<br>
+- Persisting data<br>
+- Docker Compose<br>
+
+---
+
 ## Docker
 
 <img src="images/docker_icon.png" style="float: right"/>
@@ -33,15 +42,6 @@ To provide a deeper knowledge of the Docker platform
 "Docker provides the ability to package applications in an isolated environment called a container. Containers are lightweight and contain everything needed to run the application, so you don't need to rely on what's installed on the host"
 </br>
 <font size="6"><a href="https://docs.docker.com/get-started/docker-overview/">docs.docker.com/get-started/docker-overview/</a></font>
-
----
-
-## Agenda
-<!-- .slide: style="text-align: left;"> -->
-- Isolation<br>
-- Networking<br>
-- Persisting data<br>
-- Docker Compose<br>
 
 ---
 
