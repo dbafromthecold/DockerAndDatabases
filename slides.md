@@ -25,15 +25,13 @@ To provide a deeper knowledge of the Docker platform
 
 ---
 
-## Why databases in Docker?
+## Docker
 
 <img src="images/docker_icon.png" style="float: right"/>
 
 <!-- .slide: style="text-align: left;"> -->
-- Ease of deployment
-- Known configuration
-- Testing new versions (rollback)
-- Separate compute from data
+"Docker provides the ability to package and run an application in a loosely isolated environment called a container. The isolation and security lets you run many containers simultaneously on a given host. Containers are lightweight and contain everything needed to run the application, so you don't need to rely on what's installed on the host"
+<font size="6"><a href="https://docs.docker.com/get-started/docker-overview/">docs.docker.com/get-started/docker-overview/</a></font>
 
 ---
 
