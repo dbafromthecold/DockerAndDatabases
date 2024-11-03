@@ -12,6 +12,11 @@
 
 
 
+# remove all previous volumes
+docker volume prune -f
+
+
+
 # confirm no containers running
 docker container ls -a
 
