@@ -41,7 +41,6 @@ To provide a deeper knowledge of the Docker platform
 - Isolation<br>
 - Networking<br>
 - Persisting data<br>
-- Custom images<br>
 - Docker Compose<br>
 
 ---
