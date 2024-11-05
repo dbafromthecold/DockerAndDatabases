@@ -19,10 +19,6 @@
 
 ---
 
-# Test
-
----
-
 ## Session Aim
 <!-- .slide: style="text-align: left;"> -->
 To provide a deeper knowledge of the Docker platform
